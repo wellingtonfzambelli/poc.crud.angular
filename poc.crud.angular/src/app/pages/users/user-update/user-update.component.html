@@ -1,6 +1,6 @@
-<h2>Create User</h2>
+<h2>Update User</h2>
 
-<form>
+<form *ngIf="request.name">
     <div class="mb-3">
       <label for="name" class="form-label">Name:</label>
       <input type="text" [(ngModel)]="request.name" [ngModelOptions]="{standalone: true}" class="form-control">
@@ -11,12 +11,5 @@
       <input type="text" [(ngModel)]="request.job" [ngModelOptions]="{standalone: true}" class="form-control">
     </div>
 
-    <button class="btn btn-primary" (click)="save()">Save</button>
+    <button class="btn btn-primary" (click)="update()">Update</button>
   </form>
-
-  <div *ngIf="response.name">
-    <label>Name: {{response.name}}</label><br />
-    <label>Job: {{response.job}}</label><br />
-    <label>ID: {{response.id}}</label><br />
-    <label>Created at: {{response.createdAt}}</label>
-  </div>
