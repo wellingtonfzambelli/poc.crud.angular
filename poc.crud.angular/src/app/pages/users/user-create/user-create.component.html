@@ -1,0 +1,22 @@
+<h2>Create User</h2>
+
+<form>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" [(ngModel)]="request.name" [ngModelOptions]="{standalone: true}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label for="profession" class="form-label">Profession</label>
+      <input type="text" [(ngModel)]="request.job" [ngModelOptions]="{standalone: true}" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" (click)="save()">Submit</button>
+  </form>
+
+  <div *ngIf="response.name">
+    <label>Name: {{response.name}}</label><br />
+    <label>Job: {{response.job}}</label><br />
+    <label>ID: {{response.id}}</label><br />
+    <label>Created at: {{response.createdAt}}</label>
+  </div>
