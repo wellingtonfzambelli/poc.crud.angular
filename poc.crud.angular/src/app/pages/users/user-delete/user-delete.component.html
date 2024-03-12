@@ -1,0 +1,18 @@
+<h2>Do you want to remove this user?</h2>
+
+<form *ngIf="userGet.data.first_name">
+    <div class="mb-3">
+        <label for="name" class="form-label">ID: <Strong>{{userGet.data.id}}</Strong></label>
+      </div>
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Name: <Strong>{{userGet.data.first_name}}</Strong></label>
+    </div>
+
+    <div class="mb-3">
+      <label for="profession" class="form-label">Profession: <strong>{{userGet.data.last_name}}</strong></label>
+    </div>
+
+    <button class="btn btn-primary" (click)="cancel()">Cancel</button> - 
+    <button class="btn btn-primary" (click)="delete()">Delete</button>
+  </form>

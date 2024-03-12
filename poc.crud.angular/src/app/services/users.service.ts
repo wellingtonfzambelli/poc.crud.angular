@@ -34,4 +34,8 @@ export class UsersService {
   updateUser(id: string, request: UserUpdateRequest): Observable<UserUpdateResponse>{
     return this._httpClient.put<UserUpdateResponse>(this._apiBaseUrl + '/api/users/' + id, request);
   }
+
+  deleteUser(id: string): Observable<any>{
+    return this._httpClient.delete<any>(this._apiBaseUrl + '/api/users/' + id);
+  }
 }

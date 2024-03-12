@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserCreateComponent } from './pages/users/user-create/user-create.component';
 import { FormsModule } from '@angular/forms';
 import { UserUpdateComponent } from './pages/users/user-update/user-update.component';
+import { UserDeleteComponent } from './pages/users/user-delete/user-delete.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UserUpdateComponent } from './pages/users/user-update/user-update.compo
     UsersComponent,
     NavbarComponent,
     UserCreateComponent,
-    UserUpdateComponent
+    UserUpdateComponent,
+    UserDeleteComponent
   ],
   imports: [
     BrowserModule,
