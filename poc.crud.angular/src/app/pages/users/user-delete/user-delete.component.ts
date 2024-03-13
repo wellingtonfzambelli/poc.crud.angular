@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../../services/users.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserGetResponse } from '../../../models/Users/userGet.model';
+import { User } from '../../../models/Users/user.model';
 
 @Component({
   selector: 'app-user-delete',
@@ -11,7 +11,7 @@ import { UserGetResponse } from '../../../models/Users/userGet.model';
 
 export class UserDeleteComponent implements OnInit {
   
-  public userGet = {} as UserGetResponse;
+  public user = {} as User;
   
   private _id: string;
   private _usersServices: UsersService;
@@ -30,7 +30,7 @@ export class UserDeleteComponent implements OnInit {
 
     this._usersServices.getUser(this._id)
       .subscribe(res => {
-        this.userGet = res;
+        this.user = res;
       });
   }
 

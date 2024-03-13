@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserCreate, UserCreateResponse } from '../../../models/Users/userCreate.model';
+import { UserCreate } from '../../../models/Users/userCreate.model';
 import { UsersService } from '../../../services/users.service';
+import { User } from '../../../models/Users/user.model';
 
 @Component({
   selector: 'app-user-create',
@@ -14,10 +15,12 @@ export class UserCreateComponent {
   
   public request: UserCreate = {
     name: '',
-    job: ''
+    gender: '',
+    email: '',
+    status: ''
   }
 
-  public response = {} as UserCreateResponse;
+  public response = {} as User;
 
   constructor(usersServices: UsersService){
     this._usersServices = usersServices;

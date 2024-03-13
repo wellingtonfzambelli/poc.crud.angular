@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../../services/users.service';
-import { UserGetResponse } from '../../../models/Users/userGet.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserUpdateRequest } from '../../../models/Users/userUpdate.model';
+import { User } from '../../../models/Users/user.model';
 
 @Component({
   selector: 'app-user-update',
@@ -12,16 +12,18 @@ import { UserUpdateRequest } from '../../../models/Users/userUpdate.model';
 
 export class UserUpdateComponent implements OnInit {
 
-  public response = {} as UserGetResponse;
+  public response = {} as User;
   public request = {} as UserUpdateRequest;
 
   private _id: string;
   private _usersServices: UsersService;
   private _route: ActivatedRoute;
+  private _router: Router;
 
-  constructor(usersServices: UsersService, route: ActivatedRoute){
+  constructor(usersServices: UsersService, route: ActivatedRoute, router: Router){
     this._usersServices = usersServices;
     this._route = route;
+    this._router = router;
     this._id = '';
   }
   
@@ -31,8 +33,9 @@ export class UserUpdateComponent implements OnInit {
     this._usersServices.getUser(this._id)
       .subscribe(res => {
         this.request = {
-          name: res.data.first_name + ' ' + res.data.last_name,
-          job: ''
+          name: res.name,
+          email: res.email,
+          status: res.status
         }
       });
   }
@@ -40,7 +43,8 @@ export class UserUpdateComponent implements OnInit {
   update(){
     this._usersServices.updateUser(this._id, this.request)
       .subscribe(res => {
-        alert('Updated: ' + res.updatedAt);
+        alert('Updated: ' + res.id);
+        this._router.navigate(['users']);
       });
   }
 }

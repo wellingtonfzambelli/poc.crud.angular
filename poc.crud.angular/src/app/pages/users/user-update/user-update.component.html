@@ -7,8 +7,13 @@
     </div>
 
     <div class="mb-3">
-      <label for="profession" class="form-label">Profession</label>
-      <input type="text" [(ngModel)]="request.job" [ngModelOptions]="{standalone: true}" class="form-control">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="text" [(ngModel)]="request.email" [ngModelOptions]="{standalone: true}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label for="status" class="form-label">Status</label>
+      <input type="text" [(ngModel)]="request.status" [ngModelOptions]="{standalone: true}" class="form-control">
     </div>
 
     <button class="btn btn-primary" (click)="update()">Update</button>

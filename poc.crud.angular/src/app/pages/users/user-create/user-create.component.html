@@ -7,16 +7,27 @@
     </div>
 
     <div class="mb-3">
-      <label for="profession" class="form-label">Profession</label>
-      <input type="text" [(ngModel)]="request.job" [ngModelOptions]="{standalone: true}" class="form-control">
+      <label for="gender" class="form-label">Gender</label>
+      <input type="text" [(ngModel)]="request.gender" [ngModelOptions]="{standalone: true}" class="form-control">
     </div>
 
-    <button class="btn btn-primary" (click)="save()">Save</button>
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="text" [(ngModel)]="request.email" [ngModelOptions]="{standalone: true}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label for="status" class="form-label">Status</label>
+      <input type="text" [(ngModel)]="request.status" [ngModelOptions]="{standalone: true}" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" (click)="save()">save</button>
   </form>
 
   <div *ngIf="response.name">
-    <label>Name: {{response.name}}</label><br />
-    <label>Job: {{response.job}}</label><br />
     <label>ID: {{response.id}}</label><br />
-    <label>Created at: {{response.createdAt}}</label>
+    <label>Name: {{response.name}}</label><br />
+    <label>gender: {{response.gender}}</label><br />
+    <label>E-mail: {{response.email}}</label>
+    <label>Status: {{response.status}}</label>
   </div>
