@@ -39,6 +39,8 @@ export class UserDeleteComponent implements OnInit {
       .subscribe(res => {
         alert('The data has been removed');
         this._router.navigate(['users']);
+      }, (error) =>{
+        alert(error.status);
       });
   }
 
