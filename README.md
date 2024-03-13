@@ -1,7 +1,7 @@
 # poc.crud.angular
-Simple CRUD using Angular and third-party api from reqres.in
+Simple CRUD using Angular and third-party api from gorest.co.in
 
-# Third-party Api [https://reqres.in/](https://gorest.co.in/)
+# Third-party Api https://gorest.co.in/
 ![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/566d5200-2766-48e8-8727-502220678190)
 
 
