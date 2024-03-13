@@ -6,6 +6,6 @@ Simple CRUD using Angular and third-party api from reqres.in
 
 
 # Angular
-![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/2f2e62d9-8f6f-4184-86d4-09b366a18185)
-![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/9713fb05-36d7-4d7d-895b-cde8f28c80bf)
-![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/82099797-abc9-422b-a3c9-e29ab0437833)
+![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/4c1f602b-7188-4bde-abd2-9feeec1fb56e)
+![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/a1f60f2c-571d-41ad-b012-c310673334ce)
+![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/b7350160-dc2d-468d-8d96-26d77251d297)
