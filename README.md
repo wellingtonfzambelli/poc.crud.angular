@@ -6,6 +6,6 @@ Simple CRUD using Angular and third-party api from gorest.co.in
 
 
 # Angular
-![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/4c1f602b-7188-4bde-abd2-9feeec1fb56e)
-![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/a1f60f2c-571d-41ad-b012-c310673334ce)
+![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/befd4aa3-129a-4896-ad27-3d710c55dd7d)
+![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/c80e07ba-3a75-4021-9a6b-8e6ffe30d3ea)
 ![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/b7350160-dc2d-468d-8d96-26d77251d297)
