@@ -13,7 +13,11 @@
 
     <div class="mb-3">
       <label for="status" class="form-label">Status</label>
-      <input type="text" [(ngModel)]="request.status" [ngModelOptions]="{standalone: true}" class="form-control">
+      
+      <select [(ngModel)]="request.status" [ngModelOptions]="{standalone: true}" class="form-select">
+        <option value="null">-- Select --</option>
+        <option  *ngFor="let status of statusDropdown" value="{{status}}">{{status}}</option>
+      </select>
     </div>
 
     <button class="btn btn-primary" (click)="update()">Update</button>

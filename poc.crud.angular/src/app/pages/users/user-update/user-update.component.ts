@@ -14,6 +14,7 @@ export class UserUpdateComponent implements OnInit {
 
   public response = {} as User;
   public request = {} as UserUpdateRequest;
+  public statusDropdown: string[] = ['active', 'inactive'];
 
   private _id: string;
   private _usersServices: UsersService;

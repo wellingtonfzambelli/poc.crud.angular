@@ -13,6 +13,7 @@ export class UserCreateComponent {
   
   private _usersServices: UsersService;
   
+  public statusDropdown: string[] = ['active', 'inactive'];  
   public request: UserCreate = {
     name: '',
     gender: '',
