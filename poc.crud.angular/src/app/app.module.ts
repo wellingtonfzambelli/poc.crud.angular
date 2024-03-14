@@ -10,6 +10,7 @@ import { UserCreateComponent } from './pages/users/user-create/user-create.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserUpdateComponent } from './pages/users/user-update/user-update.component';
 import { UserDeleteComponent } from './pages/users/user-delete/user-delete.component';
+import { UserFormComponent } from './pages/users/shared/user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserDeleteComponent } from './pages/users/user-delete/user-delete.compo
     NavbarComponent,
     UserCreateComponent,
     UserUpdateComponent,
-    UserDeleteComponent
+    UserDeleteComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

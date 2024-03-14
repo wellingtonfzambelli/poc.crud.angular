@@ -13,7 +13,7 @@ export class UserDeleteComponent implements OnInit {
   
   public user = {} as User;
   
-  private _id: string;
+  private id: number = 0;
   private _usersServices: UsersService;
   private _route: ActivatedRoute;
   private _router: Router;
@@ -22,20 +22,19 @@ export class UserDeleteComponent implements OnInit {
     this._usersServices = usersServices;
     this._route = route;
     this._router = router;
-    this._id = '';
   }
 
   ngOnInit(): void {
-    this._id = this._route.snapshot.paramMap.get('id') || '';
+    this.id = Number(this._route.snapshot.paramMap.get('id') || '');
 
-    this._usersServices.getUser(this._id)
+    this._usersServices.getUser(this.id)
       .subscribe(res => {
         this.user = res;
       });
   }
 
   delete(){
-    this._usersServices.deleteUser(this._id)
+    this._usersServices.deleteUser(this.id)
       .subscribe(res => {
         alert('The data has been removed');
         this._router.navigate(['users']);

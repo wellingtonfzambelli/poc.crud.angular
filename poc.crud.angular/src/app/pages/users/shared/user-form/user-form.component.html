@@ -1,0 +1,57 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    
+    <!-- NAME -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" formControlName="nameForm" name="nameForm" class="form-control">
+      
+      <div *ngIf="userForm.controls.nameForm.invalid && userForm.controls.nameForm.touched && userForm.controls.nameForm.errors" style="color:red;">
+          <p *ngIf="userForm.controls.nameForm.errors['required']">Name is required.</p>
+      </div>
+    </div>
+
+    <!-- GENDER -->
+    <div class="mb-3">
+      <label for="gender" class="form-label">Gender:</label><br />
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" formControlName="genderForm" type="radio" name="genderForm" value="male">
+        <label class="form-check-label" for="inlineRadio1">Male</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" formControlName="genderForm" type="radio" name="genderForm" value="female">
+        <label class="form-check-label" for="inlineRadio2">Female</label>
+      </div>
+
+      <div *ngIf="userForm.controls.genderForm.invalid && userForm.controls.genderForm.touched && userForm.controls.genderForm.errors" style="color:red;">
+        <p *ngIf="userForm.controls.genderForm.errors['required']">Gender is required.</p>
+      </div>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="text" formControlName="emailForm" class="form-control">
+
+        <div *ngIf="userForm.controls.emailForm.invalid && userForm.controls.emailForm.touched && userForm.controls.emailForm.errors" style="color:red;">
+          <p *ngIf="userForm.controls.emailForm.errors['required']">E-mail is required.</p>
+          <p *ngIf="userForm.controls.emailForm.errors['email']">Invalid e-mail.</p>
+      </div>
+    </div>
+
+    <!-- STATUS -->
+    <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select formControlName="statusForm" class="form-select">
+          <option value="" selected>-- Select --</option>
+          <option  *ngFor="let status of statusDropdown" value="{{status}}">{{status}}</option>
+        </select>
+
+        <div *ngIf="userForm.controls.statusForm.invalid && userForm.controls.statusForm.touched && userForm.controls.statusForm.errors" style="color:red;">
+          <p *ngIf="userForm.controls.statusForm.errors['required']">Status is required.</p>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">save</button> - 
+    <button type="button" class="btn btn-primary" (click)="clear()">clear</button>
+  </form>

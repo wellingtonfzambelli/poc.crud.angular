@@ -19,7 +19,7 @@ export class UsersService {
     this._httpClient = httpClient;
   }
 
-  getUser(id: string): Observable<User>{
+  getUser(id: number): Observable<User>{
     return this._httpClient.get<User>(this._apiBaseUrl + '/users/' + id);
   }
 
@@ -35,7 +35,7 @@ export class UsersService {
     );
   }
 
-  updateUser(id: string, request: UserUpdateRequest): Observable<User>{
+  updateUser(id: number, request: UserUpdateRequest): Observable<User>{
     return this._httpClient.put<User>(
       this._apiBaseUrl + '/users/' + id, 
       request,
@@ -43,7 +43,7 @@ export class UsersService {
     );
   }
 
-  deleteUser(id: string): Observable<any>{
+  deleteUser(id: number): Observable<any>{
     return this._httpClient.delete<any>(
       this._apiBaseUrl + '/users/' + id, 
       { headers: this.createHeader() }
