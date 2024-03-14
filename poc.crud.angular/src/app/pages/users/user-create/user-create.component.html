@@ -1,6 +1,6 @@
 <h2>Create User</h2>
 
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()" #localForm="ngForm">
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <!-- NAME -->
     <div class="mb-3">
       <label for="name" class="form-label">Name:</label>
@@ -61,6 +61,6 @@
     <label>ID: {{response.id}}</label><br />
     <label>Name: {{response.name}}</label><br />
     <label>gender: {{response.gender}}</label><br />
-    <label>E-mail: {{response.email}}</label>
+    <label>E-mail: {{response.email}}</label><br />
     <label>Status: {{response.status}}</label>
   </div>

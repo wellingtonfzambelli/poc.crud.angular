@@ -41,6 +41,8 @@ export class UserCreateComponent {
 
       this._usersServices.createUser(request)
       .subscribe(res =>{
+        alert("User created!");
+        this.clear();
         this.response = res;
       });
     }
