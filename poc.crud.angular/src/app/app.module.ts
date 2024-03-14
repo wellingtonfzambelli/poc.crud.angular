@@ -7,7 +7,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserCreateComponent } from './pages/users/user-create/user-create.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserUpdateComponent } from './pages/users/user-update/user-update.component';
 import { UserDeleteComponent } from './pages/users/user-delete/user-delete.component';
 
@@ -24,7 +24,8 @@ import { UserDeleteComponent } from './pages/users/user-delete/user-delete.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
