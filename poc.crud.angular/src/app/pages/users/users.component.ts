@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
-import { Observable, map } from 'rxjs';
 import { User } from '../../models/Users/user.model';
 
 @Component({
@@ -11,25 +10,35 @@ import { User } from '../../models/Users/user.model';
 
 export class UsersComponent implements OnInit {
   
+  public users: User[] = [];
+  public usersFilter: User[] = [];
+  public showSpinner: boolean = true;
+
   private _usersServices: UsersService;
-  public users = new Observable<User[]>();
-  public usersFilter = new Observable<User[]>();
 
   constructor(usersServices: UsersService){
     this._usersServices = usersServices;
   }
 
   ngOnInit(): void {
-    this.users = this._usersServices.getUsers();
-    this.usersFilter = this.users;
+    this._usersServices.getUsers().subscribe({
+      next: value =>{
+        this.users = value;
+        this.usersFilter = this.users;
+      },
+      error: err => {
+        console.error('something wrong occurred: ' + err);
+      },
+      complete: () => {
+        this.showSpinner = false;
+      },
+    });
   }
 
   search(event: Event){
     const target = event.target as HTMLInputElement;
     const value = target.value.toLocaleLowerCase();
 
-    this.users = this.usersFilter.pipe(
-      map(arr => arr.filter(f => f.name.toLocaleLowerCase().includes(value)))
-    );
+    this.users = this.usersFilter.filter(s => s.name.toLocaleLowerCase().includes(value));
   }
 }

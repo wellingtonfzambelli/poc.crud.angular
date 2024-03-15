@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
-import { Observable } from 'rxjs';
+import { Observable, delay } from 'rxjs';
 import { UserCreate } from '../models/Users/userCreate.model';
 import { User } from '../models/Users/user.model';
 import { UserUpdateRequest } from '../models/Users/userUpdate.model';
