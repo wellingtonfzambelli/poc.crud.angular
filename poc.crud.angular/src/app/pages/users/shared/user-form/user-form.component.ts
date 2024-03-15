@@ -21,6 +21,7 @@ export class UserFormComponent implements OnInit {
   public user = {} as User;
   public response = {} as User;
   public statusDropdown: string[] = ['active', 'inactive'];  
+  public showSpinner: boolean = true;
 
   public userForm = new FormGroup({
     nameForm: new FormControl('', Validators.required,),
@@ -44,12 +45,18 @@ export class UserFormComponent implements OnInit {
             genderForm: res.gender,
             statusForm: res.status
           });
+
+          this.showSpinner = false;
         });
+    }else{
+      this.showSpinner = false;
     }
   }
 
   onSubmit() {
     if(this.userForm.valid){
+      this.showSpinner = true;
+
       if(this.userId == 0) {
         this.create();
       }else{
@@ -67,9 +74,19 @@ export class UserFormComponent implements OnInit {
     }
 
     this._usersServices.createUser(request)
-    .subscribe(res =>{
-      alert("User created!");
-      this._router.navigate(['users']);
+    .subscribe({
+      next: value =>{
+        alert("User created!");
+        this._router.navigate(['users']);
+      },
+      error: err => {
+        console.error('something wrong occurred: ' + err);
+        this.showSpinner = false;
+      },
+      complete: () => {
+        console.log('complete');
+        this.showSpinner = false;
+      },
     });
   }
 
@@ -80,11 +97,20 @@ export class UserFormComponent implements OnInit {
       status: this.userForm.value.statusForm as string
     }
 
-    this._usersServices.updateUser(id, request)
-      .subscribe(res => {
-        alert('User updated!');
+    this._usersServices.updateUser(id, request).subscribe({
+      next: value =>{
+        alert("User updated!");
         this._router.navigate(['users']);
-      });
+      },
+      error: err => {
+        console.error('something wrong occurred: ' + err);
+        this.showSpinner = false;
+      },
+      complete: () => {
+        console.log('complete');
+        this.showSpinner = false;
+      },
+    });
   }
 
   clear(){
