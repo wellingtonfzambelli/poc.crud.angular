@@ -1,5 +1,10 @@
-# poc.crud.angular
-Simple CRUD using Angular and third-party api from gorest.co.in
+# About
+This project implements a simple CRUD application using Angular and integrates with the third-party API provided by gorest.co.in for data management and retrieval.
+
+# Stacks of this project
+- Angular 17
+- Bootstrap
+- gorest.co.in Web Site _(for testing)_
 
 # Third-party Api https://gorest.co.in/
 ![image](https://github.com/wellingtonfzambelli/poc.crud.angular/assets/41651018/566d5200-2766-48e8-8727-502220678190)
